@@ -16,13 +16,13 @@
     $(document).ready(function() {
       var url = "https://raw.githubusercontent.com/PlataformasWeb-P-AA2025/clase03-1bim-ErickGaona/refs/heads/main/ejercicio/data/data_instituciones.json";
       
-      // Acción para obtener la información
+      
       $("#obtenerInformacion").click(function() {
         $.ajax({
           dataType: 'json',
           url: url 
         }).then(function(data) {
-          // Iterar a través de los datos y mostrarlos
+    
           for (var i = 0; i < data.length; i++) {
             console.log(data[i]);
             console.log("AMIE: " + data[i].AMIE);
@@ -42,7 +42,7 @@
             console.log("Numero Docentes: " + data[i].Numerodocentes);
             console.log("Estado: " + data[i].Estado);
             
-            // Agregar los datos al mensaje final
+           
             $('#mensajeFinal').append("<p><b>AMIE:</b> " + data[i].AMIE + 
                                       " <b>Nombre Educativa:</b> " + data[i]["Nombre-Educativa"] + 
                                       " <b>Provincia:</b> " + data[i].Provincia + 
@@ -63,7 +63,7 @@
         });
       });
       
-      // Acción para limpiar la información mostrada
+      
       $("#limpiarInformacion").click(function() {
         $('#mensajeFinal').empty();
       });
